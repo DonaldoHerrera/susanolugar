@@ -13,7 +13,7 @@ class AuthController extends Controller
 {
     public function signup(Request $request)
     {
-        return $request->all();
+        
         $request->validate([
             'nombre'     => 'required|string',
             'email'    => 'required|string|email|unique:users',
