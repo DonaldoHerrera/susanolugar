@@ -43,7 +43,7 @@ class EmpresasController extends Controller
         ]);
         $empresa->save();
         return response()->json([
-            'message' => 'Se ha creado una empresa!', 'success' => true], 201);
+            'message' => 'Se ha creado una empresa!', 'success' => true, 'empresa' => $empresa], 201);
     }
 
     public function show($id)
