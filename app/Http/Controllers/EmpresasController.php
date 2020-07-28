@@ -16,7 +16,7 @@ class EmpresasController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'user_id' => 'required',
+            
             'nombre_emp'     => 'required|string',
             'descripcion_emp'    => 'required',
             'sitio_web'    => 'required|string',
@@ -28,8 +28,9 @@ class EmpresasController extends Controller
             'tipo_empresa' => 'required|string|',
 
         ]);
+        $user = $request->user();
         $empresa = new Empresa([
-            'user_id' => $request->user_id,
+            'user_id' => $user->id,
             'nombre_emp'     => $request->nombre_emp,
             'descripcion_emp'    => $request->descripcion_emp,
             'sitio_web' => $request->sitio_web,
