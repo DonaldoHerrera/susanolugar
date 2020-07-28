@@ -16,21 +16,13 @@ class TipoEspacioController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'cuarto' => 'required|string',
-            'salon'     => 'required|string',
-            'oficina'    => 'required|string',
-            'laboratorio'    => 'required|string',
-            'bodega' => 'required|string|',
-            'otro' => 'required|string|',
+            'nombre_espacio' => 'required|string',
+            
 
         ]);
         $tiposespacio = new TiposEspacio([
-            'cuarto' => $request->cuarto,
-            'salon'     => $request->salon,
-            'oficina'    => $request->oficina,
-            'laboratorio' => $request->laboratorio,
-            'bodega' => $request->bodega,
-            'otro' => $request->otro,
+            'nombre_espacio' => $request->nombre_espacio,
+            
     
         ]);
         $tiposespacio->save();
@@ -46,12 +38,7 @@ class TipoEspacioController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'cuarto' => 'required|string',
-            'salon'     => 'required|string',
-            'oficina'    => 'required|string',
-            'laboratorio'    => 'required|string',
-            'bodega' => 'required|string|',
-            'otro' => 'required|string|',
+            'nombre_espacio' => 'required|string',
 
         ]);
         $tiposespacio = TiposEspacio::findOrFail($id);
@@ -63,6 +50,6 @@ class TipoEspacioController extends Controller
     {
         $tiposespacio = TiposEspacio::findOrFail($id);
         $tiposespacio->delete();
-        return response()->json(['message' => 'Vehiculo eliminado correctamente','status_code' => 201],201); 
+        return response()->json(['message' => 'Tipo Espacio eliminado correctamente','status_code' => 201],201); 
     }
 }

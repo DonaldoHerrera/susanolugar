@@ -15,12 +15,7 @@ class CreateTiposEspaciosTable extends Migration
     {
         Schema::create('tipos_espacios', function (Blueprint $table) {
             $table->id();
-            $table->string('cuarto');
-            $table->string('salon');
-            $table->string('oficina');
-            $table->string('laboratorio');
-            $table->string('bodega');
-            $table->string('otro');
+            $table->string('nombre_espacio');
             $table->timestamps();
         });
     }
