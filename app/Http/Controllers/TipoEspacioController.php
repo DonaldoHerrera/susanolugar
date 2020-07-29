@@ -27,7 +27,7 @@ class TipoEspacioController extends Controller
         ]);
         $tiposespacio->save();
         return response()->json([
-            'message' => 'Successfully created tipo de espacio!', 'success' => true], 201);
+            'message' => 'Successfully created tipo de espacio', 'success' => true], 201);
     }
 
     public function show($id)
